@@ -1,41 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom'
+import { NavBar } from './components/NavBar/NavBar'
+import { HomePage } from './pages/HomePage/HomePage'
+import { CreateBuildPage } from './pages/CreateBuildPage/CreateBuildPage';
+import { BuildListPage } from './pages/BuildListPage/BuildListPage';
+import { ViewBuildPage } from './pages/ViewBuildPage/ViewBuildPage';
 
 const App: React.FunctionComponent = () => {
   return (
-    <div className="App">
-      {/* Insert nice Header component for whole app here */}
-      <h1 className="App-header">
-        Builderlands
-      </h1>
-      {/* Insert nice Body and Menu Side Bar component(s) here */}
-      <p>
-        Welcome to Builderlands! Here you can create, view, and save builds for your favorite Borderlands characters.
-      </p>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Route path='/' component={ HomePage } exact />
+        <Route path='/build-list' component={ BuildListPage } />
+        <Route path='/create-build' component={ CreateBuildPage } />
+        <Route path='/view-build/:name' component={ ViewBuildPage } />
+      </div>
+    </Router>
   )
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;
