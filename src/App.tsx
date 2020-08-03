@@ -19,7 +19,8 @@ const App: React.FunctionComponent = () => {
         <Route path='/' component={ HomePage } exact />
         <Route path='/build-list' component={ BuildListPage } />
         <Route path='/create-build' component={ CreateBuildPage } />
-        <Route path='/view-build/:name' component={ ViewBuildPage } />
+        {/* view build currently needs a buildId to show anything */}
+        <Route path='/view-build/:buildId' component={ ViewBuildPage } />
       </div>
     </Router>
   )

@@ -1,7 +1,7 @@
 import { RouteComponentProps } from 'react-router-dom';
 
 export interface MatchParams {
-    name: string,
+    buildId: string,
 }
 
 export interface IViewBuildPageInput extends RouteComponentProps<MatchParams> {
