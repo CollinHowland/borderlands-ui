@@ -4,9 +4,9 @@ import './App.css';
 
 const App: React.FunctionComponent = () => {
   return (
-    <div>
+    <div className="App">
       {/* Insert nice Header component for whole app here */}
-      <h1>
+      <h1 className="App-header">
         Builderlands
       </h1>
       {/* Insert nice Body and Menu Side Bar component(s) here */}
