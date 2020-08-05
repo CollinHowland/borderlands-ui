@@ -1,7 +1,7 @@
 import React from 'react'
 import { HomePageProps } from './HomePage.types'
 
-export const HomePage: React.FunctionComponent<HomePageProps> = props => {
+export const HomePage: React.FunctionComponent<HomePageProps> = (props) => {
     return (
         <div className="App">
             {/* Insert nice Header component for whole app here */}

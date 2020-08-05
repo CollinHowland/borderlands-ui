@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { NavBarProps } from './NavBar.types'
 
-export const NavBar: React.FunctionComponent<NavBarProps> = props => {
+export const NavBar: React.FunctionComponent<NavBarProps> = (props) => {
     return (
         <nav>
             <ul>

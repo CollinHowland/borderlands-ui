@@ -5,7 +5,7 @@ import { BuildVO } from '../../models/vos/BuildVO'
 import { Link } from 'react-router-dom'
 import { BuildList } from '../../components/BuildList/BuildList'
 
-export const BuildListPage: React.FunctionComponent<BuildListPageProps> = props => {
+export const BuildListPage: React.FunctionComponent<BuildListPageProps> = (props) => {
 
     const builds: BuildVO[] = generatemultipleBuilds()
 

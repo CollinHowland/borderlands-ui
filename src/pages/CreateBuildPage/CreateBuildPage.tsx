@@ -1,7 +1,7 @@
 import React from 'react'
 import { CreateBuildPageProps } from './CreateBuildPage.types'
 
-export const CreateBuildPage: React.FunctionComponent<CreateBuildPageProps> = props => {
+export const CreateBuildPage: React.FunctionComponent<CreateBuildPageProps> = (props) => {
     return (
         <div>
             <h1>

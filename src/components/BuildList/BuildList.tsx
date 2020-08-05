@@ -2,7 +2,7 @@ import React from 'react'
 import { BuildListProps } from './BuildList.types'
 import { Link } from 'react-router-dom'
 
-export const BuildList: React.FunctionComponent<BuildListProps> = props => {
+export const BuildList: React.FunctionComponent<BuildListProps> = (props) => {
 
     return (
         <>
