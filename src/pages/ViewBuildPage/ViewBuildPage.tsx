@@ -1,6 +1,6 @@
 import React from 'react'
 import { ViewBuildPageProps } from './ViewBuildPage.types'
-import { generateSingleBuild } from '../../services/mocks/mockBuilds'
+import { generateSingleBuild } from '../../models/mocks/mockBuilds'
 import { BuildVO } from '../../models/vos/BuildVO'
 
 export const ViewBuildPage: React.FunctionComponent<ViewBuildPageProps> = (props) => {

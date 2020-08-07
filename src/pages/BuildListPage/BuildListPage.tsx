@@ -1,6 +1,6 @@
 import React from 'react'
 import { BuildListPageProps } from './BuildListPage.types'
-import { generatemultipleBuilds } from '../../services/mocks/mockBuilds'
+import { generatemultipleBuilds } from '../../models/mocks/mockBuilds'
 import { BuildVO } from '../../models/vos/BuildVO'
 import { Link } from 'react-router-dom'
 import { BuildList } from '../../components/BuildList/BuildList'
