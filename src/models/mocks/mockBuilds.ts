@@ -1,5 +1,5 @@
-import { BuildVO } from "../../models/vos/BuildVO"
-import { dtoToBuildVOs } from "../../models/converters/dtoToVo"
+import { BuildVO } from "../vos/BuildVO"
+import { dtoToBuildVOs } from "../converters/dtoToVo"
 
 
 export const generateSingleBuild = (): BuildVO => {
