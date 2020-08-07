@@ -1,5 +1,8 @@
-export interface ISkillInput {
+import { SkillVO } from "../../../../models/vos/SkillVO";
 
+export interface ISkillInput {
+    imagePath: string,
+    skill: SkillVO,
 }
 
 export interface ISkillEvents {
