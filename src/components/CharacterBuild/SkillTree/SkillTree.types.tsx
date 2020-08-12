@@ -3,6 +3,7 @@ import { SkillVO } from "../../../models/vos/SkillVO";
 import { SkillWithImageVO } from "../../../models/vos/SkillWithImageVO";
 
 export interface ISkillTreeInput {
+    name: string,
     colorPalette: SkillTreeColorPaletteEnumVO,
     numberOfPointsInvested?: number,
     skills: SkillWithImageVO[][],

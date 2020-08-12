@@ -11,9 +11,30 @@ export default {
     component: SkillTree,
 }
 
-export const normal = () => 
+export const orange = () => 
     <SkillTree 
+        name="Demolition Woman"
+        colorPalette={new SkillTreeColorPaletteEnumVO('ORANGE')}
+        numberOfPointsInvested={0}
+        skills={mockSkillTreeSkills}
+
+        onHoverSkill={action('hover')}
+    />
+
+export const blue = () => 
+    <SkillTree 
+        name="Shield of Retribution"
         colorPalette={new SkillTreeColorPaletteEnumVO('BLUE')}
+        numberOfPointsInvested={0}
+        skills={mockSkillTreeSkills}
+
+        onHoverSkill={action('hover')}
+    />
+
+export const green = () => 
+    <SkillTree 
+        name="Bottomless Mags"
+        colorPalette={new SkillTreeColorPaletteEnumVO('GREEN')}
         numberOfPointsInvested={0}
         skills={mockSkillTreeSkills}
 

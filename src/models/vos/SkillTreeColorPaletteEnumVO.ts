@@ -7,15 +7,15 @@ enum OverallColorEnum {
 }
 
 enum TreeColorEnum {
-    BLUE = 'blue',
-    ORANGE = 'orange',
-    GREEN = 'green',
+    BLUE = '#005c99',
+    ORANGE = '#994d00',
+    GREEN = '#558000',
 }
 
 enum SkillSelectedEnum {
-    BLUE = 'pink',
-    ORANGE = 'purple',
-    GREEN = 'red',
+    BLUE = '#33ccff',
+    ORANGE = '#e67300',
+    GREEN = '#aaff00',
 }
 
 type OverallColorStrings = keyof typeof OverallColorEnum;

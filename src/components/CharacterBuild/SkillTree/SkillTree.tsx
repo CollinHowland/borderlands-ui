@@ -26,17 +26,29 @@ const TreeCol = styled(Col)`
     text-align: center;
 `
 
+const TreeNameContainer = styled(Container)`
+    text-align: center;
+    color: white;
+`
+
 export const SkillTree: React.FunctionComponent<SkillTreeProps> = (props) => {
 
     const [numberOfPointsInvested, setNumberOfPointsInvested] = useState(props.numberOfPointsInvested ? props.numberOfPointsInvested : 0)
     const [skills, setSkills] = useState(props.skills)
     
     
-    const TreeContainer = styled(Container)`
-        border-style: solid;
+    const TreeOuterContainer = styled(Container)`
         width: 270px;
         background-color: ${props.colorPalette.treeColor};
+        border-style: solid;
+        border-radius: 15px;
     `
+
+    const TreeInnerContainer = styled(Container)`
+        border-style: solid;
+        border-radius: 15px;
+    `
+
 
     const onHoverSkill = (name: string, description: string, currentRankEffect?: string, nextRankEffect?: string) => {
         props.onHoverSkill(name, description, currentRankEffect, nextRankEffect)
@@ -78,26 +90,27 @@ export const SkillTree: React.FunctionComponent<SkillTreeProps> = (props) => {
         setNumberOfPointsInvested(numberOfPointsInvested + 1)
     }
 
-    // const isRowDisabled = (rowMinimumRequiredPoints: number): boolean => {
-    //     return rowMinimumRequiredPoints > numberOfPointsInvested
-    // }
-
     return (
-        <TreeContainer>
-            {skills.map((skillSubList, index) => 
-                <SkillTreeRow
-                    key={index}
-                    rowId={index}
-                    skills={skillSubList}
-                    colorPalette={props.colorPalette}
-                    minimumRequiredPoints={index * 5}
-                    numberOfPointsInvested={numberOfPointsInvested}
+        <TreeOuterContainer>
+            <TreeInnerContainer>
+                {skills.map((skillSubList, index) => 
+                    <SkillTreeRow
+                        key={index}
+                        rowId={index}
+                        skills={skillSubList}
+                        colorPalette={props.colorPalette}
+                        minimumRequiredPoints={index * 5}
+                        numberOfPointsInvested={numberOfPointsInvested}
 
-                    onHoverSkill={onHoverSkill}
-                    onSkillRankIncreased={onNumberOfPointsInvestedIncreased}
-                />
-            )} 
-        </TreeContainer>
+                        onHoverSkill={onHoverSkill}
+                        onSkillRankIncreased={onNumberOfPointsInvestedIncreased}
+                    />
+                )} 
+            </TreeInnerContainer>
+            <TreeNameContainer>
+                <strong>{props.name}</strong>
+            </TreeNameContainer>
+        </TreeOuterContainer>
     )
 
 }

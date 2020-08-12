@@ -90,6 +90,13 @@ export const Skill: React.FunctionComponent<SkillProps> = (props) => {
                         />
                         <div>{rank}/{props.skill.data.maxRank}</div>
                     </SkillButton>
+                    {/* <input
+                        type="image" 
+                        src={props.skill.imagePath}
+                        onClick={onSkillClicked}
+                        onMouseOver={onHover}
+                        // disabled={disabled}
+                    /> */}
                 {/* )}
             </OverlayTrigger> */}
         </SkillContainer>

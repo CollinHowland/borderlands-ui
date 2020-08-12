@@ -6,6 +6,7 @@ import { mockSkillTreeSkills } from '../../../models/mocks/mockSkills'
 
 const setup = () => {
     const props = {
+        name: 'Test Name',
         colorPalette: new SkillTreeColorPaletteEnumVO('BLUE'),
         numberOfPointsInvested: 0,
         skills: mockSkillTreeSkills,
