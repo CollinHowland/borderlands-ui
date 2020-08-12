@@ -1,16 +1,17 @@
 import React from 'react'
 import { Skill } from "./Skill"
 import { shallow } from "enzyme"
-import { mockSingleSkillRankZero } from '../../../../models/mocks/mockSkills'
+import { mockSingleSkillRankZero, mockSingleSkillWithImage } from '../../../../models/mocks/mockSkills'
 import { SkillTreeColorPaletteEnumVO } from '../../../../models/vos/SkillTreeColorPaletteEnumVO'
 
 const setup = () => {
     const props = {
-        imagePath: "fake-image-path",
-        skill: mockSingleSkillRankZero,
+        skillId: 0,
+        skill: mockSingleSkillWithImage,
         colorPalette: new SkillTreeColorPaletteEnumVO('BLUE'),
         disabled: false,
-        onHover: jest.fn()
+        onHover: jest.fn(),
+        onSkillRankIncreased: jest.fn(),
     }
     const wrapper = shallow(<Skill {...props} />)
     return { ...props, wrapper }

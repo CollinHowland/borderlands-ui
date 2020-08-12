@@ -1,8 +1,11 @@
 import { SkillTreeColorPaletteEnumVO } from "../../../models/vos/SkillTreeColorPaletteEnumVO";
+import { SkillVO } from "../../../models/vos/SkillVO";
+import { SkillWithImageVO } from "../../../models/vos/SkillWithImageVO";
 
 export interface ISkillTreeInput {
     colorPalette: SkillTreeColorPaletteEnumVO,
-    numberOfPointsInvested: number,
+    numberOfPointsInvested?: number,
+    skills: SkillWithImageVO[][],
 }
 
 export interface ISkillTreeEvents {

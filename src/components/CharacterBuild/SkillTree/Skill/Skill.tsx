@@ -25,7 +25,7 @@ const SkillContainer = styled.div`
 
 export const Skill: React.FunctionComponent<SkillProps> = (props) => {
 
-    const [rank, setRank] = useState(props.skill.rank)
+    const [rank, setRank] = useState(props.skill.data.rank)
     const [color, setColor] = useState(rank > 0 ? props.colorPalette.skillSelected : 'gray')//useState("#e65c00")
     // const [outlineColor, setOutlineColor] = useState("#ff8000")
     const [disabled, setDisabled] = useState(props.disabled)
@@ -40,28 +40,30 @@ export const Skill: React.FunctionComponent<SkillProps> = (props) => {
 
     useEffect(() => {
         setColor(rank > 0 ? props.colorPalette.skillSelected : 'gray')
+        console.log("rank is: " + rank)
     },[rank])
 
     const onSkillClicked = () => {
         const newRank = rank + 1
-        setRank(newRank > props.skill.maxRank ? props.skill.maxRank : newRank)
+        if (newRank <= props.skill.data.maxRank) {
+            props.onSkillRankIncreased(props.skillId)
+        }
     }
 
     const onHover = () => {
-        //TODO maybe change this to just call props function without parameters
-        props.onHover(props.skill.name, props.skill.description, props.skill.currentRankEffect, props.skill.nextRankEffect)
+        props.onHover(props.skill.data.name, props.skill.data.description, props.skill.data.currentRankEffect, props.skill.data.nextRankEffect)
     }
 
     const skillPopover =
         <Popover id="popover-basic">
-            <Popover.Title as="h3">{props.skill.name}</Popover.Title>
+            <Popover.Title as="h3">{props.skill.data.name}</Popover.Title>
             <Popover.Content>
-                <div>{props.skill.description}</div>
-                {props.skill.currentRankEffect &&
-                    <div><strong>Current Effect:</strong><br />{props.skill.currentRankEffect}</div>
+                <div>{props.skill.data.description}</div>
+                {props.skill.data.currentRankEffect &&
+                    <div><strong>Current Effect:</strong><br />{props.skill.data.currentRankEffect}</div>
                 }
-                {props.skill.nextRankEffect &&
-                    <div><strong>Next Rank Effect:</strong><br />{props.skill.nextRankEffect}</div>
+                {props.skill.data.nextRankEffect &&
+                    <div><strong>Next Rank Effect:</strong><br />{props.skill.data.nextRankEffect}</div>
                 }
             </Popover.Content>
         </Popover>
@@ -84,9 +86,9 @@ export const Skill: React.FunctionComponent<SkillProps> = (props) => {
                     >
                         <Image
                             rounded
-                            src={props.imagePath}
+                            src={props.skill.imagePath}
                         />
-                        <div>{rank}/{props.skill.maxRank}</div>
+                        <div>{rank}/{props.skill.data.maxRank}</div>
                     </SkillButton>
                 {/* )}
             </OverlayTrigger> */}

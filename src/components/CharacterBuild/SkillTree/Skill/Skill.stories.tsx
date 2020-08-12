@@ -3,7 +3,10 @@ import { Skill } from './Skill'
 import { 
     mockSingleSkillRankZero, 
     mockSingleSkillRankOne, 
-    mockSingleSkillFiveOutOfFive 
+    mockSingleSkillFiveOutOfFive, 
+    mockSingleSkillWithImage,
+    mockSingleSkillRankOneWithImage,
+    mockSingleSkillRankFiveWithImage,
 } from "../../../../models/mocks/mockSkills";
 // @ts-ignore
 import squareImage from '../../../../assets/image/skills/storybook/square-outline-32.png'
@@ -20,36 +23,48 @@ export default {
 
 export const rankZero = () => 
     <Skill 
-        imagePath={squareImage} 
-        skill={mockSingleSkillRankZero}
+        // imagePath={squareImage} 
+        skillId={0}
+        skill={mockSingleSkillWithImage}
         colorPalette={colorPalette}
-        onHover={action('hover')}
         disabled={false}
+
+        onHover={action('hover')}
+        onSkillRankIncreased={action('skill rank changed')}
     />
 
 export const rankOne = () => 
     <Skill 
-        imagePath={squareImage} 
-        skill={mockSingleSkillRankOne}
+        // imagePath={squareImage} 
+        skillId={0}
+        skill={mockSingleSkillRankOneWithImage}
         colorPalette={colorPalette}
-        onHover={action('hover')}
         disabled={false}
+
+        onHover={action('hover')}
+        onSkillRankIncreased={action('skill rank changed')}
     />
 
 export const rankFiveOutOfFive = () => 
     <Skill 
-        imagePath={squareImage} 
-        skill={mockSingleSkillFiveOutOfFive}
+        // imagePath={squareImage} 
+        skillId={0}
+        skill={mockSingleSkillRankFiveWithImage}
         colorPalette={colorPalette}
-        onHover={action('hover')}
         disabled={false}
+
+        onHover={action('hover')}
+        onSkillRankIncreased={action('skill rank changed')}
     />
 
 export const disabled = () => 
     <Skill 
-        imagePath={squareImage} 
-        skill={mockSingleSkillRankZero}
+        // imagePath={squareImage} 
+        skillId={0}
+        skill={mockSingleSkillWithImage}
         colorPalette={colorPalette}
-        onHover={action('hover')}
         disabled={true}
+
+        onHover={action('hover')}
+        onSkillRankIncreased={action('skill rank changed')}
     />
